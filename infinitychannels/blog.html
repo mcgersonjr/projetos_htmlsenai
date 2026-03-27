@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#120b2b" />
+
+    <title>Blog — Infinity Channels</title>
+    <meta name="description" content="Blog Infinity Channels — dicas, novidades e guias para aproveitar melhor seu IPTV." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root{
+        --container: 1120px;
+        --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        --font-title: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+        --text: #22174a;
+        --muted: rgba(34, 23, 74, 0.72);
+
+        --brand1: #7b2fff;
+        --brand2: #2b6bff;
+
+        --card: rgba(255,255,255,0.86);
+        --card-border: rgba(120, 92, 200, 0.22);
+
+        --shadow: 0 16px 40px rgba(35, 18, 84, 0.14);
+        --shadow-strong: 0 30px 70px rgba(10, 5, 30, 0.35);
+
+        --radius-lg: 18px;
+        --radius-md: 14px;
+        --radius-sm: 12px;
+      }
+
+      *{box-sizing:border-box}
+      html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+      body{
+        margin:0;
+        font-family:var(--font-body);
+        color:var(--text);
+        background: linear-gradient(180deg, #f9f6ff 0%, #f4efff 45%, #f7f3ff 100%);
+      }
+
+      img{max-width:100%;display:block}
+      a{color:inherit;text-decoration:none}
+      .container{width:min(100% - 32px, var(--container));margin-inline:auto}
+
+      :focus-visible{
+        outline: 3px solid rgba(123,47,255,.45);
+        outline-offset: 3px;
+        border-radius: 10px;
+      }
+
+      /* HEADER */
+      .site-header{
+        position:sticky; top:0; z-index:999;
+        backdrop-filter: blur(12px);
+        background: rgba(18, 14, 45, 0.62);
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+        color: rgba(255,255,255,0.92);
+      }
+      .header__inner{
+        display:flex; align-items:center; justify-content:space-between;
+        gap:14px; padding:14px 0;
+      }
+      .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-title);font-weight:800}
+      .logo img{width:46px;height:auto;filter: drop-shadow(0 10px 18px rgba(0,0,0,.35))}
+      .logo__text{font-size:1.05rem;letter-spacing:.2px}
+      .logo__strong{font-weight:900}
+
+      .nav{
+        display:flex; align-items:center; gap:14px;
+        flex-wrap:wrap;
+        justify-content:flex-end;
+      }
+      .nav a{
+        padding:10px 12px;
+        border-radius:12px;
+        color: rgba(255,255,255,0.92);
+        font-weight:800;
+      }
+      .nav a:hover{ background: rgba(255,255,255,0.08); }
+
+      .btn{
+        display:inline-flex;align-items:center;justify-content:center;
+        padding:12px 16px;border-radius:12px;font-weight:900;
+        border:1px solid transparent;cursor:pointer;
+        transition:transform .16s ease, filter .16s ease, box-shadow .16s ease;
+      }
+      .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+      .btn:active{transform:translateY(0)}
+      .btn-primary{
+        color:#fff;
+        background: linear-gradient(135deg, var(--brand1), #5b2cf2 40%, var(--brand2));
+        box-shadow: 0 16px 30px rgba(123,47,255,.28);
+      }
+      .btn-ghost{
+        color:#fff;
+        background: rgba(255,255,255,.08);
+        border-color: rgba(255,255,255,.14);
+      }
+
+      /* HERO BLOG */
+      .blog-hero{
+        position:relative;
+        color:#fff;
+        overflow:hidden;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      .blog-hero__bg{
+        position:absolute; inset:0; z-index:0;
+        background-image:
+          radial-gradient(900px 520px at 18% 20%, rgba(123,47,255,.52), transparent 60%),
+          radial-gradient(900px 520px at 72% 20%, rgba(43,107,255,.40), transparent 60%),
+          linear-gradient(180deg, rgba(10,8,26,.78), rgba(10,8,26,.55)),
+          url("./assets/bg-galaxy.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .blog-hero__inner{
+        position:relative; z-index:1;
+        padding: 48px 0 34px;
+      }
+      .blog-hero h1{
+        margin:0 0 10px;
+        font-family: var(--font-title);
+        font-size: clamp(2rem, 3.6vw, 3rem);
+        letter-spacing: -0.6px;
+        text-shadow: 0 18px 38px rgba(0,0,0,.35);
+      }
+      .blog-hero p{
+        margin:0;
+        color: rgba(255,255,255,.86);
+        max-width: 65ch;
+        line-height: 1.6;
+        font-weight: 600;
+      }
+
+      /* TOOLBAR */
+      .toolbar{ margin-top: 18px; display:grid; gap: 12px; }
+      .toolbar__row{
+        display:flex; gap: 12px; flex-wrap: wrap; align-items: center;
+      }
+      .search{
+        flex: 1;
+        min-width: 220px;
+        display:flex; gap: 10px; align-items:center;
+        background: rgba(255,255,255,.12);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 14px;
+        padding: 10px 12px;
+        backdrop-filter: blur(12px);
+      }
+      .search input{
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: none;
+        color: #fff;
+        font-weight: 700;
+      }
+      .search input::placeholder{ color: rgba(255,255,255,.75); }
+
+      .chips{ display:flex; gap: 10px; flex-wrap: wrap; }
+      .chip{
+        padding: 10px 12px;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: .9rem;
+        background: rgba(255,255,255,.10);
+        border: 1px solid rgba(255,255,255,.14);
+        color: #fff;
+        cursor: pointer;
+        transition: transform .14s ease, filter .14s ease;
+      }
+      .chip:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+      .chip[aria-pressed="true"]{
+        background: linear-gradient(135deg, rgba(123,47,255,.55), rgba(43,107,255,.45));
+        border-color: rgba(255,255,255,.22);
+      }
+
+      /* MAIN */
+      .content{ padding: 28px 0 70px; }
+      .section-head{
+        display:flex; align-items:flex-end; justify-content:space-between;
+        gap: 16px; flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+      .section-head h2{ margin:0; font-family: var(--font-title); letter-spacing: -.3px; }
+      .section-head small{ color: var(--muted); font-weight: 800; }
+
+      /* GRID CARDS */
+      .grid{ display:grid; gap: 18px; }
+      .card{
+        background: var(--card);
+        border: 1px solid var(--card-border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        overflow:hidden;
+        transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      }
+      .card:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 22px 58px rgba(35, 18, 84, 0.18);
+      }
+      .card__media{ position:relative; aspect-ratio: 16 / 9; overflow:hidden; }
+      .card__media img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.02);
+        filter: saturate(1.05) contrast(1.03);
+      }
+      .tag{
+        position:absolute;
+        left: 12px;
+        top: 12px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: .82rem;
+        color: #fff;
+        background: rgba(10,8,26,.55);
+        border: 1px solid rgba(255,255,255,.14);
+        backdrop-filter: blur(10px);
+      }
+      .card__body{ padding: 14px 14px 16px; display:grid; gap: 10px; }
+      .meta{
+        display:flex; gap: 10px; flex-wrap: wrap; align-items:center;
+        color: rgba(34, 23, 74, 0.70);
+        font-weight: 900;
+        font-size: .9rem;
+      }
+      .dot{
+        width: 6px; height: 6px; border-radius: 999px;
+        background: linear-gradient(135deg, var(--brand2), var(--brand1));
+        display:inline-block;
+      }
+      .card__title{
+        margin:0;
+        font-family: var(--font-title);
+        font-size: 1.15rem;
+        letter-spacing: -.2px;
+        line-height: 1.2;
+      }
+      .card__desc{
+        margin:0;
+        color: var(--muted);
+        font-weight: 600;
+        line-height: 1.6;
+      }
+      .card__actions{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 4px;
+      }
+      .read{
+        display:inline-flex;
+        gap: 8px;
+        align-items:center;
+        font-weight: 900;
+        color: rgba(34, 23, 74, 0.92);
+      }
+      .read span{
+        display:inline-grid;
+        place-items:center;
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        background: rgba(123,47,255,.10);
+        border: 1px solid rgba(123,47,255,.20);
+      }
+
+      /* PAGINATION */
+      .pagination{ display:flex; justify-content:center; gap: 10px; margin-top: 22px; }
+      .page{
+        width: 40px; height: 40px;
+        border-radius: 12px;
+        border: 1px solid rgba(120, 92, 200, 0.22);
+        background: rgba(255,255,255,.70);
+        box-shadow: 0 10px 22px rgba(35, 18, 84, 0.10);
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .page[aria-current="page"]{
+        color:#fff;
+        background: linear-gradient(135deg, var(--brand1), var(--brand2));
+        border-color: rgba(255,255,255,.18);
+      }
+
+      /* MODAL */
+      .modal{
+        position: fixed;
+        inset: 0;
+        display:none;
+        place-items: center;
+        padding: 18px;
+        z-index: 9999;
+      }
+      .modal[open]{ display:grid; }
+      .modal__backdrop{
+        position:absolute;
+        inset:0;
+        background: rgba(10,8,26,.62);
+        backdrop-filter: blur(10px);
+      }
+      .modal__panel{
+        position:relative;
+        width: min(920px, 100%);
+        max-height: min(85vh, 760px);
+        overflow:auto;
+        background: rgba(255,255,255,.92);
+        border: 1px solid rgba(120, 92, 200, 0.22);
+        border-radius: 18px;
+        box-shadow: var(--shadow-strong);
+      }
+      .modal__top{
+        position: sticky;
+        top: 0;
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 14px;
+        background: rgba(255,255,255,.92);
+        border-bottom: 1px solid rgba(120, 92, 200, 0.18);
+        backdrop-filter: blur(10px);
+        z-index: 2;
+      }
+      .modal__top strong{
+        font-family: var(--font-title);
+        letter-spacing: -.2px;
+      }
+      .close{
+        width: 42px; height: 42px;
+        border-radius: 12px;
+        border: 1px solid rgba(120, 92, 200, 0.22);
+        background: rgba(255,255,255,.75);
+        font-weight: 900;
+        cursor:pointer;
+      }
+      .modal__content{ padding: 0; }
+
+      /* ✅ POST COMPLETO (cabeçalho + foto + conteúdo + rodapé) */
+      .post{ display:grid; gap: 14px; }
+      .post__header{
+        padding: 16px 16px 0;
+        display:grid;
+        gap: 10px;
+      }
+      .post__kicker{
+        display:flex;
+        gap: 10px;
+        align-items:center;
+        flex-wrap: wrap;
+      }
+      .post__chip{
+        padding: 8px 10px;
+        border-radius: 999px;
+        font-weight: 900;
+        font-size: .85rem;
+        color:#fff;
+        background: linear-gradient(135deg, rgba(123,47,255,.85), rgba(43,107,255,.80));
+        border: 1px solid rgba(255,255,255,.24);
+      }
+      .post__meta{
+        color: rgba(34, 23, 74, 0.70);
+        font-weight: 900;
+        font-size: .92rem;
+        display:flex;
+        gap: 10px;
+        align-items:center;
+        flex-wrap: wrap;
+      }
+      .post__title{
+        margin: 0;
+        font-family: var(--font-title);
+        letter-spacing: -.3px;
+        line-height: 1.15;
+        font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+        color: rgba(34, 23, 74, 0.98);
+      }
+
+      .post__cover{
+        margin: 0 16px;
+        border-radius: 16px;
+        overflow:hidden;
+        border: 1px solid rgba(120, 92, 200, 0.18);
+        box-shadow: 0 18px 45px rgba(35, 18, 84, 0.12);
+        aspect-ratio: 16 / 9;
+        background: rgba(123,47,255,.06);
+      }
+      .post__cover img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.03);
+      }
+
+      .post__body{
+        padding: 0 16px 6px;
+      }
+      .post__body h3{
+        margin: 12px 0 6px;
+        font-family: var(--font-title);
+        letter-spacing: -.2px;
+      }
+      .post__body p{
+        margin: 10px 0 0;
+        color: rgba(34, 23, 74, 0.86);
+        line-height: 1.7;
+        font-weight: 600;
+      }
+      .post__body ul{
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: rgba(34, 23, 74, 0.86);
+        line-height: 1.7;
+        font-weight: 650;
+      }
+      .post__body li{ margin: 6px 0; }
+      .post__note{
+        margin-top: 12px;
+        padding: 12px 12px;
+        border-radius: 14px;
+        background: rgba(123,47,255,.07);
+        border: 1px solid rgba(123,47,255,.16);
+        color: rgba(34, 23, 74, 0.86);
+        font-weight: 700;
+      }
+
+      .post__footer{
+        position: sticky;
+        bottom: 0;
+        display:flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items:center;
+        padding: 12px 14px;
+        background: rgba(255,255,255,.92);
+        border-top: 1px solid rgba(120, 92, 200, 0.18);
+        backdrop-filter: blur(10px);
+        z-index: 2;
+      }
+      .post__footer .left,
+      .post__footer .right{
+        display:flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items:center;
+      }
+      .btn-mini{
+        padding: 10px 12px;
+        border-radius: 12px;
+        font-weight: 900;
+        border: 1px solid rgba(120, 92, 200, 0.22);
+        background: rgba(255,255,255,.75);
+        cursor:pointer;
+      }
+      .btn-mini:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+      .btn-mini:active{ transform: translateY(0); }
+
+      /* FOOTER */
+      .footer{
+        border-top: 1px solid rgba(120, 92, 200, 0.18);
+        background: rgba(255,255,255,.55);
+        padding: 18px 0;
+        color: rgba(34, 23, 74, 0.78);
+        font-weight: 700;
+      }
+
+      /* RESPONSIVO */
+      @media (min-width: 620px){
+        .grid{ grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (min-width: 1025px){
+        .grid{ grid-template-columns: repeat(3, 1fr); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="logo" href="./index.html#inicio" aria-label="Voltar para o site">
+          <img src="./assets/logo1.png" alt="Infinity Channels" />
+          <span class="logo__text"><span class="logo__strong">Infinity</span>Channels</span>
+        </a>
+
+        <nav class="nav" aria-label="Links do blog">
+          <a href="./index.html#planos">Planos</a>
+          <a href="./index.html#faq">FAQ</a>
+          <a class="btn btn-primary" href="./index.html#planos">Assine Agora</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="blog-hero" aria-label="Apresentação do blog">
+      <div class="blog-hero__bg" aria-hidden="true"></div>
+
+      <div class="container blog-hero__inner">
+        <h1>Blog Infinity Channels</h1>
+        <p>
+          Dicas, tutoriais e novidades pra você aproveitar ao máximo: qualidade, estabilidade e a melhor experiência.
+        </p>
+
+        <div class="toolbar" aria-label="Ferramentas do blog">
+          <div class="toolbar__row">
+            <label class="search" aria-label="Pesquisar posts">
+              <span aria-hidden="true">🔎</span>
+              <input id="search" type="search" placeholder="Pesquisar: IPTV, DNS, travamentos..." autocomplete="off" />
+            </label>
+
+            <a class="btn btn-ghost" href="./index.html">← Voltar ao site</a>
+          </div>
+
+          <div class="toolbar__row">
+            <div class="chips" role="group" aria-label="Filtrar por categoria">
+              <button class="chip" type="button" data-filter="Todos" aria-pressed="true">Todos</button>
+              <button class="chip" type="button" data-filter="Guias" aria-pressed="false">Guias</button>
+              <button class="chip" type="button" data-filter="Dicas" aria-pressed="false">Dicas</button>
+              <button class="chip" type="button" data-filter="Atualizações" aria-pressed="false">Atualizações</button>
+              <button class="chip" type="button" data-filter="Problemas" aria-pressed="false">Problemas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="content">
+      <div class="container">
+        <div class="section-head">
+          <h2>Últimos posts</h2>
+          <small><span id="count">0</span> posts</small>
+        </div>
+
+        <section class="grid" id="grid" aria-label="Lista de posts">
+          <!-- CARD 1 -->
+          <article class="card" data-category="Guias" data-title="Como instalar no celular e na Smart TV" data-read="5 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/benef-filmes-series.png" alt="Imagem de filmes e séries" />
+              <span class="tag">Guias</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 5 min</span>
+              </div>
+              <h3 class="card__title">Como instalar no celular e na Smart TV</h3>
+              <p class="card__desc">
+                Um passo a passo rápido pra deixar tudo rodando liso no Android, iOS, TV Box e Smart TV.
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">📌</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="card" data-category="Dicas" data-title="Como evitar travamentos (sem complicação)" data-read="4 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/benef-sem-travamentos.png" alt="Imagem sobre estabilidade" />
+              <span class="tag">Dicas</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 4 min</span>
+              </div>
+              <h3 class="card__title">Como evitar travamentos (sem complicação)</h3>
+              <p class="card__desc">
+                Teste essas 7 dicas: Wi-Fi, roteador, DNS, cache do app e ajustes básicos que resolvem a maioria.
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">✨</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="card" data-category="Guias" data-title="O que é M3U e Xtream? Qual escolher?" data-read="6 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/benef-hd4k.png" alt="Imagem de canais HD e 4K" />
+              <span class="tag">Guias</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 6 min</span>
+              </div>
+              <h3 class="card__title">O que é M3U e Xtream? Qual escolher?</h3>
+              <p class="card__desc">
+                Explico de forma simples as diferenças e quando cada um é melhor (sem papo técnico chato).
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">🧠</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article class="card" data-category="Atualizações" data-title="Novidades da Infinity Channels este mês" data-read="3 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/benef-ao-vivo.png" alt="Imagem de esportes ao vivo" />
+              <span class="tag">Atualizações</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 3 min</span>
+              </div>
+              <h3 class="card__title">Novidades da Infinity Channels este mês</h3>
+              <p class="card__desc">
+                Atualizações de catálogo, melhorias de estabilidade e novidades nos canais ao vivo.
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">🚀</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 5 -->
+          <article class="card" data-category="Problemas" data-title="Meu app não carrega: o que fazer?" data-read="5 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/faq-boy.png" alt="Pessoa usando smartphone" />
+              <span class="tag">Problemas</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 5 min</span>
+              </div>
+              <h3 class="card__title">Meu app não carrega: o que fazer?</h3>
+              <p class="card__desc">
+                Checklist rápido: internet, DNS, limpar cache, trocar player e como identificar se é instabilidade.
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">🛠️</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 6 -->
+          <article class="card" data-category="Dicas" data-title="Melhor configuração de Wi-Fi pra IPTV" data-read="4 min" data-date="28/02/2026">
+            <div class="card__media">
+              <img src="./assets/fundo-hero.png" alt="Imagem do hero" />
+              <span class="tag">Dicas</span>
+            </div>
+            <div class="card__body">
+              <div class="meta">
+                <span>📅 28/02/2026</span>
+                <span class="dot" aria-hidden="true"></span>
+                <span>⏱ 4 min</span>
+              </div>
+              <h3 class="card__title">Melhor configuração de Wi-Fi pra IPTV</h3>
+              <p class="card__desc">
+                2.4GHz ou 5GHz? Canal automático? Qual distância do roteador? Aqui vai o “setup” que funciona.
+              </p>
+              <div class="card__actions">
+                <a class="read" href="#" data-open>
+                  Ler agora <span aria-hidden="true">›</span>
+                </a>
+                <span aria-hidden="true">📶</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <nav class="pagination" aria-label="Paginação (visual)">
+          <button class="page" type="button" aria-current="page">1</button>
+          <button class="page" type="button">2</button>
+          <button class="page" type="button">3</button>
+        </nav>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span>© <span id="ano"></span> Infinity Channels — Blog.</span>
+      </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__panel" role="document">
+        <div class="modal__top">
+          <strong id="modalTitle">Post</strong>
+          <button class="close" type="button" data-close aria-label="Fechar">✕</button>
+        </div>
+        <div class="modal__content" id="modalContent">
+          <!-- injetado via JS -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Ano
+      document.getElementById("ano").textContent = String(new Date().getFullYear());
+
+      const search = document.getElementById("search");
+      const chips = [...document.querySelectorAll("[data-filter]")];
+      const cards = [...document.querySelectorAll(".card")];
+      const count = document.getElementById("count");
+
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalContent = document.getElementById("modalContent");
+      const closeBtn = modal.querySelector(".close");
+
+      let activeFilter = "Todos";
+
+      function updateCount(visibleCards){
+        count.textContent = String(visibleCards);
+      }
+
+      function applyFilters(){
+        const q = (search.value || "").trim().toLowerCase();
+
+        let visible = 0;
+
+        cards.forEach(card => {
+          const cat = card.getAttribute("data-category") || "";
+          const title = (card.getAttribute("data-title") || "").toLowerCase();
+          const desc = (card.querySelector(".card__desc")?.textContent || "").toLowerCase();
+
+          const matchesFilter = (activeFilter === "Todos") || (cat === activeFilter);
+          const matchesSearch = !q || title.includes(q) || desc.includes(q) || cat.toLowerCase().includes(q);
+
+          const ok = matchesFilter && matchesSearch;
+          card.style.display = ok ? "" : "none";
+          if (ok) visible++;
+        });
+
+        updateCount(visible);
+      }
+
+      chips.forEach(btn => {
+        btn.addEventListener("click", () => {
+          chips.forEach(b => b.setAttribute("aria-pressed", "false"));
+          btn.setAttribute("aria-pressed", "true");
+          activeFilter = btn.getAttribute("data-filter") || "Todos";
+          applyFilters();
+        });
+      });
+
+      search.addEventListener("input", applyFilters);
+      applyFilters();
+
+      // ✅ Agora o "conteúdo do post" é só o corpo (sem título), porque o cabeçalho vem do template.
+      const postBody = {
+        "Como instalar no celular e na Smart TV": `
+          <p><strong>Resumo:</strong> você vai instalar o app, colocar seu login e ajustar o player pra ficar liso.</p>
+          <h3>Passo a passo</h3>
+          <ul>
+            <li>Instale o aplicativo compatível no seu dispositivo.</li>
+            <li>Entre com usuário/senha ou URL (M3U/Xtream).</li>
+            <li>Ative o player recomendado e teste em HD/4K.</li>
+          </ul>
+          <div class="post__note">Se você me falar qual app usa (XCIPTV, Smarters, etc.), eu deixo esse guia 100% no seu padrão.</div>
+        `,
+        "Como evitar travamentos (sem complicação)": `
+          <p>Se travar, quase sempre é ajuste simples (Wi-Fi, cache, player ou DNS).</p>
+          <h3>Checklist rápido</h3>
+          <ul>
+            <li>Use 5GHz quando possível (perto do roteador).</li>
+            <li>Reinicie o roteador 1x por semana.</li>
+            <li>Limpe cache/dados do app.</li>
+            <li>Teste outro player (hardware/software).</li>
+            <li>Ajuste DNS (se necessário).</li>
+          </ul>
+          <div class="post__note">Me diga seu aparelho + app e eu te passo a config ideal.</div>
+        `,
+        "O que é M3U e Xtream? Qual escolher?": `
+          <p><strong>M3U</strong> é uma lista/URL que você cola no app. <strong>Xtream</strong> usa login/senha e servidor.</p>
+          <h3>Qual escolher?</h3>
+          <ul>
+            <li><strong>Xtream</strong>: costuma ser mais fácil de organizar (categorias/EPG), depende do app.</li>
+            <li><strong>M3U</strong>: simples e universal, mas pode variar mais por player.</li>
+          </ul>
+          <div class="post__note">Se quiser, eu monto um guia “qual app usar” pra cada tipo.</div>
+        `,
+        "Novidades da Infinity Channels este mês": `
+          <p>Esse post é perfeito pra você atualizar todo mês e mostrar evolução do serviço.</p>
+          <h3>O que mudou</h3>
+          <ul>
+            <li>Melhorias de estabilidade</li>
+            <li>Ajustes de catálogo</li>
+            <li>Otimizações de EPG</li>
+          </ul>
+          <div class="post__note">Dica: coloque prints/antes e depois pra aumentar a confiança da galera.</div>
+        `,
+        "Meu app não carrega: o que fazer?": `
+          <p>Antes de tudo: sua internet funciona em outros apps (YouTube/Instagram)?</p>
+          <h3>Se sim, faz isso aqui:</h3>
+          <ul>
+            <li>Limpar cache/dados do app</li>
+            <li>Trocar DNS</li>
+            <li>Reiniciar roteador</li>
+            <li>Testar no 4G (só pra tirar dúvida)</li>
+          </ul>
+          <div class="post__note">Se nada resolver, pode ser instabilidade do servidor/app naquele momento.</div>
+        `,
+        "Melhor configuração de Wi-Fi pra IPTV": `
+          <p>Config que normalmente dá “play e esquece”:</p>
+          <h3>Setup recomendado</h3>
+          <ul>
+            <li><strong>5GHz</strong> perto do roteador (mais velocidade e menos interferência)</li>
+            <li><strong>2.4GHz</strong> pra maior distância (mais alcance)</li>
+            <li>Canal automático ou canal menos congestionado</li>
+            <li>Se possível, cabo de rede na TV Box</li>
+          </ul>
+          <div class="post__note">Quer que eu ajuste isso pro seu roteador? Me fala o modelo.</div>
+        `
+      };
+
+      function getMetaFromCard(card){
+        const category = card.getAttribute("data-category") || "";
+        const read = card.getAttribute("data-read") || "";
+        const date = card.getAttribute("data-date") || (card.querySelector(".meta span")?.textContent || "").replace("📅","").trim();
+        const img = card.querySelector("img");
+        const coverSrc = img?.getAttribute("src") || "";
+        const coverAlt = img?.getAttribute("alt") || "Capa do post";
+        return { category, read, date, coverSrc, coverAlt };
+      }
+
+      function buildPostTemplate({ title, category, date, read, coverSrc, coverAlt, bodyHTML }){
+        return `
+          <article class="post" aria-label="Post do blog">
+            <header class="post__header">
+              <div class="post__kicker">
+                <span class="post__chip">${category || "Blog"}</span>
+                <div class="post__meta" aria-label="Informações do post">
+                  <span>📅 ${date || ""}</span>
+                  <span class="dot" aria-hidden="true"></span>
+                  <span>⏱ ${read || ""}</span>
+                </div>
+              </div>
+              <h1 class="post__title">${title}</h1>
+            </header>
+
+            <figure class="post__cover" aria-label="Imagem de capa do post">
+              <img src="${coverSrc}" alt="${coverAlt}">
+            </figure>
+
+            <section class="post__body" aria-label="Conteúdo do post">
+              ${bodyHTML || "<p>Conteúdo em breve.</p>"}
+            </section>
+
+            <footer class="post__footer" aria-label="Rodapé do post">
+              <div class="left">
+                <a class="btn btn-primary" href="./index.html#planos">Assine Agora</a>
+                <a class="btn btn-ghost" href="./index.html#faq">Ver FAQ</a>
+              </div>
+              <div class="right">
+                <button class="btn-mini" type="button" id="btnShare">Compartilhar</button>
+                <button class="btn-mini" type="button" id="btnCopy">Copiar link</button>
+              </div>
+            </footer>
+          </article>
+        `;
+      }
+
+      // Abrir modal (agora com template completo: cabeçalho + foto + conteúdo + rodapé)
+      document.querySelectorAll("[data-open]").forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const card = e.target.closest(".card");
+          const title = card?.getAttribute("data-title") || "Post";
+          const meta = getMetaFromCard(card);
+
+          modalTitle.textContent = title;
+
+          modalContent.innerHTML = buildPostTemplate({
+            title,
+            category: meta.category,
+            date: meta.date,
+            read: meta.read,
+            coverSrc: meta.coverSrc,
+            coverAlt: meta.coverAlt,
+            bodyHTML: postBody[title]
+          });
+
+          modal.setAttribute("open", "");
+          document.documentElement.style.overflow = "hidden";
+
+          // foco pro acessível
+          closeBtn?.focus();
+
+          // ações do rodapé (share/copy)
+          const shareUrl = window.location.href;
+
+          const btnShare = document.getElementById("btnShare");
+          const btnCopy = document.getElementById("btnCopy");
+
+          btnShare?.addEventListener("click", async () => {
+            try{
+              if (navigator.share){
+                await navigator.share({ title, text: "Veja esse post no Blog Infinity Channels:", url: shareUrl });
+              }else{
+                // fallback: abre WhatsApp Web/Mobile com texto
+                const msg = encodeURIComponent(`Veja esse post: ${title}\n${shareUrl}`);
+                window.open(`https://wa.me/?text=${msg}`, "_blank");
+              }
+            }catch(err){
+              // usuário cancelou ou não suportado — não precisa alertar
+            }
+          });
+
+          btnCopy?.addEventListener("click", async () => {
+            try{
+              await navigator.clipboard.writeText(shareUrl);
+              btnCopy.textContent = "Copiado ✅";
+              setTimeout(() => btnCopy.textContent = "Copiar link", 1400);
+            }catch(err){
+              // fallback simples
+              prompt("Copie o link:", shareUrl);
+            }
+          });
+        });
+      });
+
+      // Fechar modal
+      function closeModal(){
+        modal.removeAttribute("open");
+        document.documentElement.style.overflow = "";
+      }
+
+      modal.querySelectorAll("[data-close]").forEach(el => el.addEventListener("click", closeModal));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.hasAttribute("open")) closeModal();
+      });
+    </script>
+
+    <!-- WhatsApp widget (mantido) -->
+    <div id="whatswidget-pre-wrapper" class="">
+      <div id="whatswidget-widget-wrapper" class="whatswidget-widget-wrapper" style="all:revert;">
+        <div id="whatswidget-conversation" class="whatswidget-conversation" style="animation: revert; transition: revert; color: revert; color-scheme: revert; font: revert; font-feature-settings: revert; font-kerning: revert; font-optical-sizing: revert; font-variation-settings: revert; text-orientation: revert; text-rendering: revert; -webkit-font-smoothing: revert; -webkit-locale: revert; -webkit-text-orientation: revert; -webkit-writing-mode: revert; writing-mode: revert; zoom: revert; place-content: revert; place-items: revert; place-self: revert; alignment-baseline: revert; appearance: revert; backdrop-filter: revert; backface-visibility: revert; background: revert; background-blend-mode: revert; baseline-shift: revert; block-size: revert; border-block-end: revert; border-block-start: revert; border: revert; border-radius: revert; border-collapse: revert; border-inline-end: revert; border-inline-start: revert; bottom: revert; box-shadow: revert; box-sizing: revert; break-after: revert; break-before: revert; break-inside: revert; buffered-rendering: revert; caption-side: revert; caret-color: revert; clear: revert; clip: revert; clip-path: revert; clip-rule: revert; color-interpolation: revert; color-interpolation-filters: revert; color-rendering: revert; columns: revert; column-fill: revert; gap: revert; column-rule: revert; column-span: revert; contain: revert; contain-intrinsic-size: revert; content: revert; content-visibility: revert; counter-increment: revert; counter-reset: revert; counter-set: revert; cursor: revert; cx: revert; cy: revert; d: revert; display: none; dominant-baseline: revert; empty-cells: revert; fill: revert; fill-opacity: revert; fill-rule: revert; filter: revert; flex: revert; flex-flow: revert; float: revert; flood-color: revert; flood-opacity: revert; grid: revert; grid-area: revert; height: revert; hyphens: revert; image-orientation: revert; image-rendering: revert; inline-size: revert; isolation: revert; left: revert; letter-spacing: revert; lighting-color: revert; line-break: revert; list-style: revert; margin-block-end: revert; margin-block-start: revert; margin: revert; margin-inline-end: revert; margin-inline-start: revert; marker: revert; mask: revert; mask-type: revert; max-block-size: revert; max-height: revert; max-inline-size: revert; max-width: revert; min-block-size: revert; min-height: revert; min-inline-size: revert; min-width: revert; mix-blend-mode: revert; object-fit: revert; object-position: revert; offset: revert; opacity: 0; order: revert; origin-trial-test-property: revert; orphans: revert; outline: revert; outline-offset: revert; overflow-anchor: revert; overflow-wrap: revert; overflow: revert; overscroll-behavior-block: revert; overscroll-behavior-inline: revert; overscroll-behavior: revert; padding-block-end: revert; padding-block-start: revert; padding: revert; padding-inline-end: revert; padding-inline-start: revert; page: revert; page-orientation: revert; paint-order: revert; perspective: revert; perspective-origin: revert; pointer-events: revert; position: revert; quotes: revert; r: revert; resize: revert; right: revert; ruby-position: revert; rx: revert; ry: revert; scroll-behavior: revert; scroll-margin-block: revert; scroll-margin: revert; scroll-margin-inline: revert; scroll-padding-block: revert; scroll-padding: revert; scroll-padding-inline: revert; scroll-snap-align: revert; scroll-snap-stop: revert; scroll-snap-type: revert; shape-image-threshold: revert; shape-margin: revert; shape-outside: revert; shape-rendering: revert; size: revert; speak: revert; stop-color: revert; stop-opacity: revert; stroke: revert; stroke-dasharray: revert; stroke-dashoffset: revert; stroke-linecap: revert; stroke-linejoin: revert; stroke-miterlimit: revert; stroke-opacity: revert; stroke-width: revert; tab-size: revert; table-layout: revert; text-align: revert; text-align-last: revert; text-anchor: revert; text-combine-upright: revert; text-decoration: revert; text-decoration-skip-ink: revert; text-indent: revert; text-overflow: revert; text-shadow: revert; text-size-adjust: revert; text-transform: revert; text-underline-position: revert; top: revert; touch-action: revert; transform: revert; transform-box: revert; transform-origin: revert; transform-style: revert; user-select: revert; vector-effect: revert; vertical-align: revert; visibility: revert; -webkit-app-region: revert; border-spacing: revert; -webkit-border-image: revert; -webkit-box-align: revert; -webkit-box-decoration-break: revert; -webkit-box-direction: revert; -webkit-box-flex: revert; -webkit-box-ordinal-group: revert; -webkit-box-orient: revert; -webkit-box-pack: revert; -webkit-box-reflect: revert; -webkit-font-size-delta: revert; -webkit-highlight: revert; -webkit-hyphenate-character: revert; -webkit-line-break: revert; -webkit-line-clamp: revert; -webkit-mask-box-image: revert; -webkit-mask: revert; -webkit-mask-composite: revert; -webkit-perspective-origin-x: revert; -webkit-perspective-origin-y: revert; -webkit-print-color-adjust: revert; -webkit-rtl-ordering: revert; -webkit-ruby-position: revert; -webkit-tap-highlight-color: revert; -webkit-text-combine: revert; -webkit-text-decorations-in-effect: revert; -webkit-text-emphasis: revert; -webkit-text-emphasis-position: revert; -webkit-text-fill-color: revert; -webkit-text-security: revert; -webkit-text-stroke: revert; -webkit-transform-origin-x: revert; -webkit-transform-origin-y: revert; -webkit-transform-origin-z: revert; -webkit-user-drag: revert; -webkit-user-modify: revert; white-space: revert; widows: revert; width: revert; will-change: revert; word-break: revert; word-spacing: revert; x: revert; y: revert; z-index: revert;">
+          <div class="whatswidget-conversation-header" style="all:revert;">
+            <div id="whatswidget-conversation-title" class="whatswidget-conversation-title" style="all:revert;">Quer falar conosco?</div>
+          </div>
+          <div id="whatswidget-conversation-message" class="whatswidget-conversation-message " style="all:revert;">Olá, Tenho interesse no painel de revenda iptv pós pago.</div>
+          <div class="whatswidget-conversation-cta" style="all:revert;">
+            <a style="all:revert;" id="whatswidget-phone-desktop" target="_blank" href="https://contatopelozap.blogspot.com/" class="whatswidget-cta whatswidget-cta-desktop">Enviar Mensagem</a>
+            <a id="whatswidget-phone-mobile" target="_blank" href="https://contatopelozap.blogspot.com/" class="whatswidget-cta whatswidget-cta-mobile" style="all:revert;">Enviar Mensagem</a>
+          </div>
+        </div>
+
+        <div id="whatswidget-conversation-message-outer" class="whatswidget-conversation-message-outer" style="all:revert;">
+          <span id="whatswidget-text-header-outer" class="whatswidget-text-header-outer" style="all:revert;">Quer falar conosco?</span><br>
+          <div id="whatswidget-text-message-outer" class="whatswidget-text-message-outer" style="all:revert;">Fale aqui no nosso WhatsApp</div>
+        </div>
+
+        <div class="whatswidget-button-wrapper" style="all:revert;">
+          <div class="whatswidget-button" id="whatswidget-button" style="all:revert;">
+            <div style="margin:0 auto;width:38.5px;all:revert;">
+              <img class="whatswidget-icon" style="all:revert;" alt="" src="https://revendaiptvpospago.com/wp-content/themes/revendapospago/assets/img/icone-zap.webp">
+            </div>
+          </div>
+        </div>
+
+        <script id="whatswidget-script" type="text/javascript">
+          document.getElementById("whatswidget-conversation").style.display="none";
+          document.getElementById("whatswidget-conversation").style.opacity="0";
+          var button=document.getElementById("whatswidget-button");
+          button.addEventListener("click",openChat);
+          var conversationMessageOuter=document.getElementById("whatswidget-conversation-message-outer");
+          conversationMessageOuter.addEventListener("click",openChat);
+          var chatOpen=!1;
+          function openChat(){
+            0==chatOpen?(
+              document.getElementById("whatswidget-conversation").style.display="block",
+              document.getElementById("whatswidget-conversation").style.opacity=100,
+              chatOpen=!0,
+              document.getElementById("whatswidget-conversation-message-outer").style.display="none"
+            ):(
+              document.getElementById("whatswidget-conversation").style.opacity=0,
+              document.getElementById("whatswidget-conversation").style.display="none",
+              chatOpen=!1
+            )
+          }
+        </script>
+
+        <style id="whatswidget-style">
+          .whatswidget-widget-wrapper{font-family:"Helvetica Neue","Apple Color Emoji",Helvetica,Arial,sans-serif !important;font-size:16px !important;position:fixed !important;bottom:20px !important;right:30px !important;z-index:1001 !important}
+          .whatswidget-conversation{background-color:#e4dcd4 !important;background-image:url('data:image/png !important;') !important;background-repeat:repeat !important;box-shadow:rgba(0, 0, 0, 0.16) 0px 5px 40px !important;width:250px !important;height:300px !important;border-radius:10px !important;transition-duration:0.5s !important;margin-bottom:80px !important}
+          .whatswidget-conversation-header{background-color:white !important;padding:10px !important;padding-left:25px !important;box-shadow:0px 1px #00000029 !important;font-weight:600 !important;border-top-left-radius:10px !important;border-top-right-radius:10px !important}
+          .whatswidget-conversation-message{line-height: 1.2em !important;background-color:white !important;padding:10px !important;margin:10px !important;margin-left:15px !important;border-radius:5px !important}
+          .whatswidget-conversation-message-outer{background-color:#FFF !important;padding:10px !important;margin:10px !important;margin-left:0px !important;border-radius:5px !important;box-shadow:rgba(0, 0, 0, 0.342) 0px 2.5px 10px !important;cursor:pointer !important;animation:nudge 2s linear infinite !important;margin-bottom:70px !important}
+          .whatswidget-text-header-outer{font-weight:bold !important;font-size:90% !important}
+          .whatswidget-text-message-outer{font-size:90% !important}
+          .whatswidget-conversation-cta{border-radius:25px !important;width:175px !important;font-size:110% !important;padding:10px !important;margin:0 auto !important;text-align:center !important;background-color:#23b123 !important;color:white !important;font-weight:bold !important;box-shadow:rgba(0, 0, 0, 0.16) 0px 2.5px 10px !important;transition:1s !important;position:absolute !important;top:62% !important;left:10% !important}
+          .whatswidget-conversation-cta:hover{transform:scale(1.1) !important;filter:brightness(1.3) !important}
+          .whatswidget-cta{text-decoration:none !important;color:white !important}
+          .whatswidget-cta-desktop{display:none !important}
+          .whatswidget-cta-mobile{display:inherit !important}
+          @media (min-width: 48em){
+            .whatswidget-cta-desktop{display:inherit !important}
+            .whatswidget-cta-mobile{display:none !important}
+          }
+          .whatswidget-button-wrapper{position:fixed !important;bottom:15px !important;right:15px !important}
+          .whatswidget-button{position:relative !important;right:0px !important;background-color:#31d831 !important;border-radius:100% !important;width:60px !important;height:60px !important;box-shadow:2px 1px #0d630d63 !important;transition:1s !important}
+          .whatswidget-icon{width:42px !important;height:42px !important;position:absolute !important; bottom:10px !important; left:10px !important;}
+          .whatswidget-button:hover{filter:brightness(115%) !important;transform:rotate(15deg) scale(1.15) !important;cursor:pointer !important}
+          @keyframes nudge{
+            20%,100%{transform:translate(0,0)}
+            0%{transform:translate(0,5px);transform:rotate(2deg)}
+            10%{transform:translate(0,-5px);transform:rotate(-2deg)}
+          }
+          .whatswidget-link{position:absolute !important;bottom:90px !important;right:5px !important;opacity:0.5 !important}
+        </style>
+      </div>
+    </div>
+
+  </body>
+</html>

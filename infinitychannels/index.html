@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- =============================
+         META / CONFIG BÁSICA
+    ============================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#120b2b" />
+
+    <title>Infinity Channels</title>
+    <meta
+      name="description"
+      content="Infinity Channels — diversão sem limites. Assista canais, filmes e séries."
+    />
+
+    <!-- =============================
+         FONTES (GOOGLE FONTS)
+    ============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =============================
+         CSS DO SITE
+    ============================== -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- ✅ CSS DO WHATSAPP (separado) -->
+    <link rel="stylesheet" href="./whatsapp.css" />
+
+    <!-- Favicon (opcional)
+    <link rel="icon" href="./assets/favicon.png" />
+    -->
+    <style>
+      /* estil/* ===== Ajuste do "Mais Popular" (não ficar em cima do PADRÃO) ===== */
+
+/* dá mais espaço no topo do card destacado */
+.p-card--featured{
+  padding-top: 64px; /* antes era 30px igual os outros */
+}
+
+/* posiciona o badge mais pra cima e garante que ele não quebre linha */
+.p-badge{
+  top: 14px;              /* distância do topo */
+  z-index: 3;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: .9rem;
+  padding: 9px 14px;
+}
+
+/* opcional: garante que o título não fique colado */
+.p-card--featured .p-title{
+  margin-top: 0;
+}os específicos para esta página, se necessário */
+    </style>
+    
+  </head>
+
+  <body>
+    <!-- =============================
+         ACESSIBILIDADE: PULAR CONTEÚDO
+    ============================== -->
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- =============================
+         HEADER (TOPO FIXO) + MENU
+         data-menu-open / data-scrolled:
+         -> usados pelo JS do site
+    ============================== -->
+    <header class="site-header" data-header data-menu-open="false" data-scrolled="false">
+      <div class="container header__inner">
+        <!-- LOGO -->
+        <a class="logo" href="#inicio" aria-label="Ir para o início">
+          <img class="logo_img" src="./assets/logo1.png" alt="Infinity Channels" />
+          <span class="logo__text">
+            <span class="logo__strong">Infinity</span>Channels
+          </span>
+        </a>
+
+        <!-- BOTÃO HAMBURGER (mobile) -->
+        <!-- ✅ CORRIGIDO: comentário NÃO fica dentro dos atributos -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <span class="sr-only">Abrir menu</span>
+
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+        <nav class="site-nav" id="site-nav" data-site-nav aria-label="Navegação principal">
+          <ul class="nav-list">
+            <!-- ✅ CORRIGIDO: pela sua estrutura, use tudo com ./ -->
+            <li><a class="nav-link" href="./index.html">Início</a></li>
+            <li><a class="nav-link" href="./sobre.html">Sobre</a></li>
+            <li><a class="nav-link" href="./planos.html">Planos</a></li>
+            <li><a class="nav-link" href="./revenda.html">Revenda</a></li>
+            <li><a class="nav-link" href="./blog.html">Blog</a></li>
+          </ul>
+
+          <!-- CTA (na home aponta pro #planos) -->
+          <a class="btn btn-primary btn-sm nav-cta" href="#planos">Assine Agora</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =============================
+         CONTEÚDO PRINCIPAL
+    ============================== -->
+    <main id="conteudo">
+      <!-- =============================
+           HERO
+      ============================== -->
+      <section class="hero" id="inicio" aria-label="Seção principal">
+        <div class="hero__bg" aria-hidden="true">
+          <img src="./assets/fundo-hero.png" alt="" />
+        </div>
+
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">Diversão<br />Sem Limites!</h1>
+            <p class="hero__lead">Os melhores canais, filmes e séries na sua tela!</p>
+
+            <div class="hero__actions">
+              <a class="btn btn-primary" href="#planos">Assista Agora</a>
+              <a class="btn btn-outline" href="#faq">Saiba Mais</a>
+            </div>
+
+            <div class="hero__mini">
+              <span class="pill">HD &amp; 4K</span>
+              <span class="pill">Sem travamentos</span>
+              <span class="pill">Suporte</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================
+           SOBRE
+      ============================== -->
+      <section class="about" id="sobre">
+        <div class="container">
+          <div class="about-card">
+            <!-- ✅ Observação (não é erro): ter mais de um h1 é permitido,
+                 mas SEO costuma preferir 1 por página.
+                 Se quiser, depois eu ajusto sem mudar visual.
+            -->
+            <h1 class="about-label">Sobre</h1>
+            <h2 class="about-title">Infinity Channels</h2>
+            <h3 class="about-subtitle">Diversão Sem Limites!</h3>
+
+            <p>
+              A Infinity Channels nasceu com o propósito de levar entretenimento de qualidade
+              para todos os momentos da sua rotina. Reunimos os melhores canais ao vivo,
+              filmes e séries em alta definição, oferecendo uma experiência completa,
+              estável e sem complicações.
+            </p>
+
+            <p>
+              Nossa plataforma foi pensada para quem valoriza praticidade, variedade e
+              desempenho, garantindo acesso rápido em diversos dispositivos.
+              Mais do que assistir, queremos que você viva cada conteúdo com intensidade,
+              conforto e liberdade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================
+           PLANOS
+      ============================== -->
+      <section class="pricing" id="planos" aria-labelledby="tit-planos">
+        <div class="container">
+          <header class="section-head section-head--lined">
+            <h2 id="tit-planos">Assine seu plano!</h2>
+          </header>
+
+          <div class="plan-grid" data-plan-grid>
+            <article class="plan-card" data-plan-card="basico">
+              <header class="plan-card__header">
+                <h3 class="plan-card__title">BÁSICO</h3>
+              </header>
+
+              <p class="plan-card__price">
+                <span class="price__currency">R$</span>
+                <span class="price__amount">30</span>
+                <span class="price__period">/mês</span>
+              </p>
+
+              <ul class="check-list">
+                <li>Mais de 1500 Canais</li>
+                <li>Filmes &amp; Séries HD</li>
+                <li>Acesso em Todos os Dispositivos</li>
+              </ul>
+
+              <button class="btn btn-primary plan-card__cta" type="button" data-plan-select data-plan-name="Básico">
+                Assinar
+              </button>
+            </article>
+
+            <article class="plan-card plan-card--featured" data-plan-card="padrao">
+              <div class="plan-top-badge">Mais Popular</div>
+
+              <header class="plan-card__header">
+                <h3 class="plan-card__title">PADRÃO</h3>
+              </header>
+
+              <p class="plan-card__price">
+                <span class="price__currency">R$</span>
+                <span class="price__amount">70</span>
+                <span class="price__period">/mês</span>
+              </p>
+
+              <ul class="check-list">
+                <li>Mais de 1500 Canais</li>
+                <li>Filmes &amp; Séries HD</li>
+                <li>Acesso em Todos os Dispositivos</li>
+              </ul>
+
+              <button class="btn btn-primary plan-card__cta" type="button" data-plan-select data-plan-name="Padrão">
+                Assinar
+              </button>
+            </article>
+
+            <article class="plan-card" data-plan-card="premium">
+              <header class="plan-card__header">
+                <h3 class="plan-card__title">PREMIUM</h3>
+              </header>
+
+              <p class="plan-card__price">
+                <span class="price__currency">R$</span>
+                <span class="price__amount">120</span>
+                <span class="price__period">/mês</span>
+              </p>
+
+              <ul class="check-list">
+                <li>Mais de 1500 Canais</li>
+                <li>Filmes &amp; Séries HD</li>
+                <li>Acesso em Todos os Dispositivos</li>
+              </ul>
+
+              <button class="btn btn-primary plan-card__cta" type="button" data-plan-select data-plan-name="Premium">
+                Assinar
+              </button>
+            </article>
+
+            <article class="plan-card" data-plan-card="anual">
+              <header class="plan-card__header">
+                <h3 class="plan-card__title">ANUAL</h3>
+              </header>
+
+              <p class="plan-card__price">
+                <span class="price__currency">R$</span>
+                <span class="price__amount">200</span>
+                <span class="price__period">/ano</span>
+              </p>
+
+              <ul class="check-list">
+                <li>Mais de 1500 Canais</li>
+                <li>Filmes &amp; Séries HD</li>
+                <li>Acesso em Todos os Dispositivos</li>
+              </ul>
+
+              <button class="btn btn-primary plan-card__cta" type="button" data-plan-select data-plan-name="Anual">
+                Assinar
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================
+           BENEFÍCIOS
+      ============================== -->
+      <section class="benefits" id="recursos" aria-labelledby="tit-beneficios">
+        <div class="container">
+          <header class="section-head section-head--lined">
+            <h2 id="tit-beneficios">Por Que Escolher a Infinity Channels?</h2>
+          </header>
+
+          <div class="benefit-grid">
+            <article class="benefit-card">
+              <img class="benefit-img" src="./assets/benef-hd4k.png" alt="Canais HD & 4K" loading="lazy" />
+              <h3 class="benefit-title">Canais HD &amp; 4K</h3>
+              <p class="benefit-sub">Esporte e muito mais</p>
+            </article>
+
+            <article class="benefit-card">
+              <img class="benefit-img" src="./assets/benef-filmes-series.png" alt="Filmes e Séries" loading="lazy" />
+              <h3 class="benefit-title">Filmes e Séries On Demand</h3>
+              <p class="benefit-sub">Lançamentos e completos</p>
+            </article>
+
+            <article class="benefit-card">
+              <img class="benefit-img" src="./assets/benef-ao-vivo.png" alt="Esportes ao vivo" loading="lazy" />
+              <h3 class="benefit-title">Esportes ao Vivo</h3>
+              <p class="benefit-sub">Todo tipo de esporte</p>
+            </article>
+
+            <article class="benefit-card">
+              <img class="benefit-img" src="./assets/benef-sem-travamentos.png" alt="Sem travamentos" loading="lazy" />
+              <h3 class="benefit-title">Sem Travamentos</h3>
+              <p class="benefit-sub">Estabilidade total</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================
+           BLOG (CARDS NA HOME)
+      ============================== -->
+      <section id="blog" class="blog" aria-labelledby="tit-blog">
+        <div class="container">
+          <header class="section-head section-head--lined">
+            <h2 id="tit-blog">Blog</h2>
+          </header>
+
+          <p class="blog-note">
+            Dicas rápidas, tutoriais e novidades para você aproveitar ao máximo.
+          </p>
+
+          <div class="blog-grid">
+            <article class="post-card">
+              <!-- ✅ CORRIGIDO: ./blog.html -->
+              <a class="post-card__media" href="./blog.html" aria-label="Ler: Como instalar no celular e na Smart TV">
+                <img src="./assets/benef-filmes-series.png" alt="Instalação no celular e Smart TV" loading="lazy" />
+                <span class="post-tag">GUIA</span>
+              </a>
+
+              <div class="post-card__body">
+                <p class="post-meta">
+                  <span>📅 28/02/2026</span>
+                  <span class="post-dot" aria-hidden="true"></span>
+                  <span>⏱ 5 min</span>
+                </p>
+
+                <h3 class="post-title">Como instalar no celular e na Smart TV</h3>
+                <p class="post-excerpt">
+                  Passo a passo simples para configurar no Android, iOS, TV Box e Smart TV com qualidade.
+                </p>
+
+                <div class="post-actions">
+                  <a class="btn btn-primary btn-sm" href="./blog.html">Ler mais</a>
+                  <a class="post-link" href="./blog.html">Ver todos ›</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <a class="post-card__media" href="./blog.html" aria-label="Ler: Como evitar travamentos">
+                <img src="./assets/benef-sem-travamentos.png" alt="Sem travamentos" loading="lazy" />
+                <span class="post-tag">DICAS</span>
+              </a>
+
+              <div class="post-card__body">
+                <p class="post-meta">
+                  <span>📅 28/02/2026</span>
+                  <span class="post-dot" aria-hidden="true"></span>
+                  <span>⏱ 4 min</span>
+                </p>
+
+                <h3 class="post-title">Como evitar travamentos (sem complicação)</h3>
+                <p class="post-excerpt">
+                  7 ajustes que resolvem a maioria dos problemas: Wi-Fi, cache, player e configurações.
+                </p>
+
+                <div class="post-actions">
+                  <a class="btn btn-primary btn-sm" href="./blog.html">Ler mais</a>
+                  <a class="post-link" href="./blog.html">Ver todos ›</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <a class="post-card__media" href="./blog.html" aria-label="Ler: M3U ou Xtream">
+                <img src="./assets/benef-hd4k.png" alt="Canais HD e 4K" loading="lazy" />
+                <span class="post-tag">GUIA</span>
+              </a>
+
+              <div class="post-card__body">
+                <p class="post-meta">
+                  <span>📅 28/02/2026</span>
+                  <span class="post-dot" aria-hidden="true"></span>
+                  <span>⏱ 6 min</span>
+                </p>
+
+                <h3 class="post-title">M3U ou Xtream: qual é melhor? Entenda a diferença.</h3>
+                <p class="post-excerpt">
+                  Entenda a diferença e escolha o melhor formato para o seu app e dispositivo para
+                  aproveitar ao máximo a sua assinatura.
+        
+
+                </p>
+
+                <div class="post-actions">
+                  <a class="btn btn-primary btn-sm" href="./blog.html">Ler mais</a>
+                  <a class="post-link" href="./blog.html">Ver todos ›</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="blog-bottom">
+            <a class="btn btn-outline" href="./blog.html">Ir para o Blog</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================
+           FAQ (ACORDEÃO)
+      ============================== -->
+      <section class="faq" id="faq" aria-labelledby="tit-faq">
+        <div class="container">
+          <header class="section-head section-head--lined">
+            <h2 id="tit-faq">Perguntas Frequentes</h2>
+          </header>
+
+          <div class="faq__grid">
+            <div class="faq-list" data-accordion>
+              <button class="faq-item" type="button" aria-expanded="false" aria-controls="faq1" id="faqbtn1">
+                <span class="dot"></span>
+                <span>Como faço para assinar?</span>
+                <span class="chev" aria-hidden="true">›</span>
+              </button>
+              <div class="faq-panel" id="faq1" role="region" aria-labelledby="faqbtn1" hidden>
+                Clique em “Assinar” e fale no WhatsApp.
+              </div>
+
+              <button class="faq-item" type="button" aria-expanded="false" aria-controls="faq2" id="faqbtn2">
+                <span class="dot"></span>
+                <span>Posso cancelar a qualquer momento?</span>
+                <span class="chev" aria-hidden="true">›</span>
+              </button>
+              <div class="faq-panel" id="faq2" role="region" aria-labelledby="faqbtn2" hidden>
+                Sim, você pode cancelar quando quiser.
+              </div>
+
+              <button class="faq-item" type="button" aria-expanded="false" aria-controls="faq3" id="faqbtn3">
+                <span class="dot"></span>
+                <span>Em quais dispositivos posso assistir?</span>
+                <span class="chev" aria-hidden="true">›</span>
+              </button>
+              <div class="faq-panel" id="faq3" role="region" aria-labelledby="faqbtn3" hidden>
+                Smart TV, TV Box, celular Android/iOS, tablet e PC.
+              </div>
+
+              <button class="faq-item" type="button" aria-expanded="false" aria-controls="faq4" id="faqbtn4">
+                <span class="dot"></span>
+                <span>Há suporte técnico disponível?</span>
+                <span class="chev" aria-hidden="true">›</span>
+              </button>
+              <div class="faq-panel" id="faq4" role="region" aria-labelledby="faqbtn4" hidden>
+                Sim, suporte 7 dias por semana.
+              </div>
+            </div>
+
+            <figure class="faq__media">
+              <img class="faq__img" src="./assets/faq-boy.png" alt="Pessoa usando smartphone" loading="lazy" />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =============================
+         FOOTER
+    ============================== -->
+    <footer class="site-footer" id="contato" aria-label="Rodapé">
+      <div class="site-footer__bg" aria-hidden="true"></div>
+
+      <div class="container footer__top">
+        <div class="footer-col">
+          <h3 class="footer-title">Sobre Nós</h3>
+          <a class="footer-link" href="#inicio">Quem Somos</a>
+          <a class="footer-link" href="#blog">Blog</a>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Planos</h3>
+          <a class="footer-link" href="#planos">Básico</a>
+          <a class="footer-link" href="#planos">Padrão</a>
+          <a class="footer-link" href="#planos">Premium</a>
+          <a class="footer-link" href="#planos">Anual</a>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Suporte</h3>
+          <a class="footer-link" href="#faq">FAQ</a>
+          <a class="footer-link" href="#faq">Ajuda Técnica</a>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-title">Contato</h3>
+          <a class="footer-mail" href="mailto:infinitychannels@gmail.com">infinitychannels@gmail.com</a>
+
+          <div class="footer-social" aria-label="Redes sociais">
+            <a class="social" href="#" aria-label="Facebook">f</a>
+            <a class="social" href="#" aria-label="Instagram">◎</a>
+            <a class="social" href="#" aria-label="Twitter/X">x</a>
+            <a class="social" href="#" aria-label="WhatsApp">⌁</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p class="footer-copy">© <span id="ano"></span> Infinity Channels. Todos os direitos reservados.</p>
+
+        <div class="footer-legal">
+          <a href="#" class="footer-legal__link">Política de Privacidade</a>
+          <a href="#" class="footer-legal__link">Termos de Uso</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =============================
+         WHATSAPP WIDGET (HTML LIMPO)
+         (SEM <style> e SEM <script> aqui dentro)
+    ============================== -->
+    <div id="whatswidget-pre-wrapper">
+      <div id="whatswidget-widget-wrapper" class="whatswidget-widget-wrapper">
+        <div id="whatswidget-conversation" class="whatswidget-conversation" aria-hidden="true">
+          <div class="whatswidget-conversation-header">
+            <div id="whatswidget-conversation-title" class="whatswidget-conversation-title">
+              Quer falar conosco?
+            </div>
+          </div>
+
+          <div id="whatswidget-conversation-message" class="whatswidget-conversation-message">
+            Olá, Tenho interesse no painel de revenda iptv pós pago.
+          </div>
+
+          <div class="whatswidget-conversation-cta">
+            <a
+              id="whatswidget-phone-desktop"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://contatopelozap.blogspot.com/"
+              class="whatswidget-cta whatswidget-cta-desktop"
+            >
+              Enviar Mensagem
+            </a>
+
+            <a
+              id="whatswidget-phone-mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://contatopelozap.blogspot.com/"
+              class="whatswidget-cta whatswidget-cta-mobile"
+            >
+              Enviar Mensagem
+            </a>
+          </div>
+        </div>
+
+        <div id="whatswidget-conversation-message-outer" class="whatswidget-conversation-message-outer">
+          <span id="whatswidget-text-header-outer" class="whatswidget-text-header-outer">Quer falar conosco?</span>
+          <br />
+          <div id="whatswidget-text-message-outer" class="whatswidget-text-message-outer">
+            Fale aqui no nosso WhatsApp
+          </div>
+        </div>
+
+        <div class="whatswidget-button-wrapper">
+          <button class="whatswidget-button" id="whatswidget-button" type="button" aria-label="Abrir WhatsApp">
+            <img
+              class="whatswidget-icon"
+              alt=""
+              src="https://revendaiptvpospago.com/wp-content/themes/revendapospago/assets/img/icone-zap.webp"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================
+         JS DO SITE
+    ============================== -->
+    <script>
+      // Ano automático no rodapé
+      const anoEl = document.getElementById("ano");
+      if (anoEl) anoEl.textContent = new Date().getFullYear();
+
+      // Header: muda fundo ao rolar
+      const header = document.querySelector("[data-header]");
+      const menuBtn = document.querySelector("[data-menu-button]");
+      const nav = document.querySelector("[data-site-nav]");
+
+      function onScroll() {
+        if (!header) return;
+        header.setAttribute("data-scrolled", window.scrollY > 10 ? "true" : "false");
+      }
+      window.addEventListener("scroll", onScroll);
+      onScroll();
+
+      // Menu mobile abre/fecha
+      if (header && menuBtn) {
+        menuBtn.addEventListener("click", () => {
+          const isOpen = header.getAttribute("data-menu-open") === "true";
+          header.setAttribute("data-menu-open", isOpen ? "false" : "true");
+          menuBtn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        });
+
+        // Fecha menu ao clicar em um link (melhor no celular)
+        if (nav) {
+          nav.addEventListener("click", (e) => {
+            const a = e.target.closest("a");
+            if (!a) return;
+            header.setAttribute("data-menu-open", "false");
+            menuBtn.setAttribute("aria-expanded", "false");
+          });
+        }
+      }
+
+      // FAQ acordeão
+      const faqButtons = document.querySelectorAll(".faq-item");
+      faqButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const expanded = btn.getAttribute("aria-expanded") === "true";
+          const panelId = btn.getAttribute("aria-controls");
+          const panel = document.getElementById(panelId);
+
+          btn.setAttribute("aria-expanded", expanded ? "false" : "true");
+          if (panel) panel.hidden = expanded ? true : false;
+        });
+      });
+    </script>
+
+    <!-- ✅ JS DO WHATSAPP (separado) -->
+    <script src="./whatsapp.js" defer></script>
+  </body>
+</html>
