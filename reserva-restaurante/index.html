@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservas — Bella Tavola</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="top">
+      <div class="brand">
+        <div class="mark" aria-hidden="true">🍽️</div>
+        <div>
+          <h1>Reservas</h1>
+          <p>Bella Tavola • interface mobile-first</p>
+        </div>
+      </div>
+
+      <button class="ghost icon" id="btnHelp" type="button" aria-label="Ajuda">
+        ?
+      </button>
+    </header>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="hero-top">
+            <div>
+              <h2>Reserve em 4 passos</h2>
+              <p>Sem promoções. Só reserva — rápida, elegante e direta.</p>
+            </div>
+            <span class="badge" id="badgeStep">Passo 1/4</span>
+          </div>
+
+          <div class="progress" aria-label="Progresso da reserva">
+            <div class="bar" id="bar"></div>
+          </div>
+
+          <div class="chips" aria-label="Etapas">
+            <span class="chip" id="c1">1 • Quando</span>
+            <span class="chip" id="c2">2 • Pessoas</span>
+            <span class="chip" id="c3">3 • Preferências</span>
+            <span class="chip" id="c4">4 • Confirmar</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="steps" aria-label="Etapas de reserva">
+
+        <!-- STEP 1 -->
+        <article class="step active" data-step="1">
+          <div class="step-head">
+            <h3>Quando você quer reservar?</h3>
+            <p>Escolha a data e um horário disponível.</p>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label for="date">Data</label>
+              <input id="date" type="date" required />
+              <small class="help" id="dateHelp">Selecione uma data para liberar os horários.</small>
+            </div>
+
+            <div class="field">
+              <label>Horários</label>
+              <div class="slots" id="slots" role="listbox" aria-label="Horários disponíveis">
+                <!-- JS inject -->
+              </div>
+              <small class="help" id="slotHelp">Alguns horários podem ficar indisponíveis por lotação.</small>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" id="next1" type="button">Continuar</button>
+          </div>
+        </article>
+
+        <!-- STEP 2 -->
+        <article class="step" data-step="2">
+          <div class="step-head">
+            <h3>Quantas pessoas?</h3>
+            <p>Defina o tamanho da mesa com um toque.</p>
+          </div>
+
+          <div class="counter">
+            <button class="circle" id="minus" type="button" aria-label="Diminuir">−</button>
+            <div class="count">
+              <div class="big" id="people">2</div>
+              <div class="small">pessoas</div>
+            </div>
+            <button class="circle" id="plus" type="button" aria-label="Aumentar">+</button>
+          </div>
+
+          <div class="quick" aria-label="Atalhos">
+            <button class="pill" data-p="1" type="button">1</button>
+            <button class="pill" data-p="2" type="button">2</button>
+            <button class="pill" data-p="4" type="button">4</button>
+            <button class="pill" data-p="6" type="button">6</button>
+            <button class="pill" data-p="8" type="button">8</button>
+          </div>
+
+          <div class="actions two">
+            <button class="ghost" id="back2" type="button">Voltar</button>
+            <button class="primary" id="next2" type="button">Continuar</button>
+          </div>
+        </article>
+
+        <!-- STEP 3 -->
+        <article class="step" data-step="3">
+          <div class="step-head">
+            <h3>Preferências</h3>
+            <p>Personalize sem enrolação.</p>
+          </div>
+
+          <div class="prefs">
+            <div class="field">
+              <label>Área</label>
+              <div class="segmented" role="radiogroup" aria-label="Escolha a área">
+                <button class="seg" data-area="Salão" type="button">Salão</button>
+                <button class="seg" data-area="Varanda" type="button">Varanda</button>
+                <button class="seg" data-area="Reservado" type="button">Reservado</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Ocasião</label>
+              <div class="segmented" role="radiogroup" aria-label="Escolha a ocasião">
+                <button class="seg" data-ocasiao="Jantar" type="button">Jantar</button>
+                <button class="seg" data-ocasiao="Aniversário" type="button">Aniversário</button>
+                <button class="seg" data-ocasiao="Encontro" type="button">Encontro</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Observações (opcional)</label>
+              <textarea id="notes" rows="3" placeholder="Ex: cadeira infantil, sem glúten, mesa mais silenciosa..."></textarea>
+            </div>
+          </div>
+
+          <div class="actions two">
+            <button class="ghost" id="back3" type="button">Voltar</button>
+            <button class="primary" id="next3" type="button">Continuar</button>
+          </div>
+        </article>
+
+        <!-- STEP 4 -->
+        <article class="step" data-step="4">
+          <div class="step-head">
+            <h3>Confirmar Reserva</h3>
+            <p>Confira o resumo e finalize.</p>
+          </div>
+
+          <div class="summary" id="summary"></div>
+
+          <form class="form" id="form">
+            <div class="grid2 compact">
+              <div class="field">
+                <label for="name">Nome</label>
+                <input id="name" type="text" placeholder="Seu nome" autocomplete="name" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">WhatsApp</label>
+                <input id="phone" inputmode="tel" placeholder="(11) 99999-9999" autocomplete="tel" required />
+              </div>
+            </div>
+
+            <div class="actions two">
+              <button class="ghost" id="back4" type="button">Voltar</button>
+              <button class="primary" type="submit">Confirmar</button>
+            </div>
+          </form>
+
+          <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        </article>
+
+        <!-- STEP 5 (CONCLUÍDA) -->
+        <article class="step" data-step="5">
+          <div class="done">
+            <div class="check" aria-hidden="true">✅</div>
+            <h3>Reserva concluída</h3>
+            <p class="muted">Guarde o código e, se quiser, adicione ao calendário.</p>
+
+            <div class="ticket" id="ticket"></div>
+
+            <div class="done-actions">
+              <button class="primary" id="btnCopy" type="button">Copiar detalhes</button>
+              <button class="ghost" id="btnCal" type="button">Adicionar ao calendário</button>
+              <button class="ghost" id="btnNew" type="button">Nova reserva</button>
+            </div>
+
+            <div class="toast" id="toast2" role="status" aria-live="polite"></div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+    <footer class="bottom">
+      <div class="hint" id="hint">Dica: selecione uma data e um horário.</div>
+    </footer>
+  </div>
+
+  <!-- Bottom Sheet Help -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-card">
+      <h4>Como funciona</h4>
+      <p>Escolha data/horário, quantidade e preferências. No final, confirme com nome e WhatsApp.</p>
+      <button class="primary" id="closeSheet" type="button">Entendi</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
