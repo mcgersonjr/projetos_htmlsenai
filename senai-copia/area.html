@@ -1,0 +1,207 @@
+<section class="area-aluno-page">
+  <div class="container area-aluno-wrap">
+    <div class="area-aluno-header">
+      <span class="area-tag">Portal Acadêmico</span>
+      <h1>Área do Aluno</h1>
+      <p>
+        Espaço exclusivo para acompanhar sua jornada acadêmica com praticidade,
+        organização e acesso rápido aos principais recursos estudantis.
+      </p>
+    </div>
+
+    <style> .area-aluno-page {
+  padding: 110px 0 90px;
+  background: linear-gradient(180deg, #f8f9fb 0%, #eef2f7 100%);
+}
+
+.area-aluno-wrap {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.area-aluno-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px;
+}
+
+.area-tag {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  background: rgba(227, 6, 19, 0.08);
+  color: #e30613;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.area-aluno-header h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  color: #111111;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.area-aluno-header p {
+  font-size: 1.05rem;
+  color: #5f6673;
+  line-height: 1.7;
+}
+
+.area-aluno-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.area-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid #edf0f5;
+  transition: all 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+}
+
+.area-card.destaque {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #111111 0%, #1e1e1e 100%);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.area-card.destaque h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.area-card.destaque p {
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+
+.area-card-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 16px;
+  background: rgba(227, 6, 19, 0.08);
+  color: #e30613;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.area-card.destaque .area-card-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.area-card h3 {
+  font-size: 1.2rem;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.area-card p {
+  color: #606775;
+  line-height: 1.7;
+}
+
+.area-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #e30613;
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.area-botao:hover {
+  background: #b0000f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .area-aluno-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card.destaque {
+    grid-column: span 1;
+  }
+
+  .area-aluno-page {
+    padding: 90px 0 70px;
+  }
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
+
+} </style>
+
+    <div class="area-aluno-grid">
+      <article class="area-card destaque">
+        <div class="area-card-icon">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <h2>Acesse seus recursos acadêmicos</h2>
+        <p>
+          Consulte informações importantes da sua vida escolar em um ambiente
+          moderno, intuitivo e seguro.
+        </p>
+        <a href="#" class="area-botao">Entrar no portal</a>
+      </article>
+
+      <article class="area-card">
+        <div class="area-card-icon">
+          <i class="fa-solid fa-square-poll-vertical"></i>
+        </div>
+        <h3>Consultar notas</h3>
+        <p>Acompanhe seu desempenho acadêmico e visualize suas avaliações.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-card-icon">
+          <i class="fa-solid fa-book-open-reader"></i>
+        </div>
+        <h3>Baixar material didático</h3>
+        <p>Tenha acesso aos conteúdos e arquivos disponibilizados pelos cursos.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-card-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <h3>Verificar frequência</h3>
+        <p>Consulte sua presença e acompanhe sua participação nas aulas.</p>
+      </article>
+
+      <article class="area-card">
+        <div class="area-card-icon">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+        <h3>Emitir declaração acadêmica</h3>
+        <p>Solicite e visualize documentos acadêmicos com mais agilidade.</p>
+      </article>
+    </div>
+  </div>
+</section>
