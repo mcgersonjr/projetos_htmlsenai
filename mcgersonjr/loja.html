@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loja oficial do MC Gerson Jr. Camisetas, canecas, bonés e acessórios exclusivos.">
+  <title>Loja - MC Gerson Jr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon"><span>GJ</span></div>
+        <div class="nav-logo-text">
+          <h1>MC GERSON JR</h1>
+          <p>Oficial</p>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="musicas.html">Músicas</a>
+        <a href="radio.html">Rádio 24h</a>
+        <a href="loja.html" class="active">Loja</a>
+        <a href="noticias.html">Notícias</a>
+      </div>
+      <div class="nav-right">
+        <button class="btn-gold" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;">Comprar</button>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="musicas.html">Músicas</a>
+      <a href="radio.html">Rádio 24h</a>
+      <a href="loja.html" class="active">Loja</a>
+      <a href="noticias.html">Notícias</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section style="position: relative; padding: 8rem 0 4rem; margin-top: 60px; background: linear-gradient(to bottom, rgba(8,8,8,0.6), #080808);">
+    <div class="container">
+      <span class="section-label">Loja Oficial</span>
+      <h1 class="font-display" style="font-size: clamp(3rem, 10vw, 5rem); color: white; letter-spacing: 0.05em; margin: 1rem 0;">
+        LOJA<br><span class="text-gold-gradient">GJ STORE</span>
+      </h1>
+      <p style="color: rgba(255,255,255,0.6); max-width: 500px;">Produtos exclusivos do MC Gerson Jr. Vista a marca, represente o movimento.</p>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORY FILTER ============ -->
+  <div style="position: sticky; top: 60px; z-index: 40; background: rgba(8,8,8,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,215,0,0.1);">
+    <div class="container" style="padding: 1rem 1rem;">
+      <div style="display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem;">
+        <button data-category-filter="Todos" class="active" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: #FFD700; color: #080808; border: none; cursor: pointer; transition: all 0.3s;">Todos</button>
+        <button data-category-filter="Camisetas" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;">Camisetas</button>
+        <button data-category-filter="Canecas" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;">Canecas</button>
+        <button data-category-filter="Bonés" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;">Bonés</button>
+        <button data-category-filter="Acessórios" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;">Acessórios</button>
+        <button data-category-filter="Exclusivos" style="flex-shrink: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: transparent; color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s;">Exclusivos</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRODUCTS GRID ============ -->
+  <section class="section-dark" style="padding: 4rem 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem;">
+        <!-- Produto 1 -->
+        <div data-product data-category="Camisetas" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #FFD700, #FFA500); display: flex; align-items: center; justify-content: center; color: #080808; font-size: 3rem;">
+            <i class="fas fa-shirt"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Camisetas</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Camiseta Brilho do Ouro</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 89,90</span>
+              <button data-add-to-cart data-product-id="1" data-product-name="Camiseta Brilho do Ouro" data-product-price="89.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 2 -->
+        <div data-product data-category="Canecas" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #1DB954, #1aa34a); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Canecas</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Caneca GJ Oficial</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 49,90</span>
+              <button data-add-to-cart data-product-id="2" data-product-name="Caneca GJ Oficial" data-product-price="49.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 3 -->
+        <div data-product data-category="Bonés" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #FF9900, #FF8C00); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-hat-cowboy"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Bonés</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Boné MC Gerson Jr</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 69,90</span>
+              <button data-add-to-cart data-product-id="3" data-product-name="Boné MC Gerson Jr" data-product-price="69.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 4 -->
+        <div data-product data-category="Camisetas" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #E1306C, #C13584); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-shirt"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Camisetas</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Camiseta Periferia Vence</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 89,90</span>
+              <button data-add-to-cart data-product-id="4" data-product-name="Camiseta Periferia Vence" data-product-price="89.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 5 -->
+        <div data-product data-category="Canecas" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #FC3C44, #FF453A); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Canecas</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Caneca Raiz da Favela</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 49,90</span>
+              <button data-add-to-cart data-product-id="5" data-product-name="Caneca Raiz da Favela" data-product-price="49.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 6 -->
+        <div data-product data-category="Acessórios" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #A238FF, #9D4EDD); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-ring"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Acessórios</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Pulseira GJ Gold</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 39,90</span>
+              <button data-add-to-cart data-product-id="6" data-product-name="Pulseira GJ Gold" data-product-price="39.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 7 -->
+        <div data-product data-category="Exclusivos" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #00D9FF, #00B4D8); display: flex; align-items: center; justify-content: center; color: #080808; font-size: 3rem;">
+            <i class="fas fa-crown"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Exclusivos</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Kit Fã Completo</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 199,90</span>
+              <button data-add-to-cart data-product-id="7" data-product-name="Kit Fã Completo" data-product-price="199.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Produto 8 -->
+        <div data-product data-category="Bonés" class="product-card">
+          <div style="aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #00D9FF, #0096C7); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            <i class="fas fa-hat-cowboy"></i>
+          </div>
+          <div style="padding: 1rem;">
+            <p class="section-label">Bonés</p>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.875rem; color: white; margin: 0.5rem 0;">Boné Snapback GJ</h3>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 1rem;">
+              <span class="font-display" style="font-size: 1.25rem; color: #FFD700; letter-spacing: 0.05em;">R$ 79,90</span>
+              <button data-add-to-cart data-product-id="8" data-product-name="Boné Snapback GJ" data-product-price="79.90" class="btn-gold" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CART BUTTON ============ -->
+  <button data-cart-btn style="display: none; position: fixed; bottom: 2rem; right: 2rem; z-index: 50; background: #FFD700; color: #080808; border: none; padding: 1rem 1.5rem; border-radius: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; box-shadow: 0 0 30px rgba(255,215,0,0.4); align-items: center; gap: 0.75rem;">
+    <i class="fas fa-shopping-cart"></i>
+    <span data-cart-count>0</span> item(s)
+  </button>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-top">
+        <div class="footer-section">
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="musicas.html">Músicas</a></li>
+            <li><a href="radio.html">Rádio 24h</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Loja</h3>
+          <ul>
+            <li><a href="loja.html">Produtos</a></li>
+            <li><a href="loja.html">Camisetas</a></li>
+            <li><a href="loja.html">Acessórios</a></li>
+            <li><a href="loja.html">Exclusivos</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="mailto:contato@mcgersonjr.com.br">Email</a></li>
+            <li><a href="#">Parcerias</a></li>
+            <li><a href="#">Suporte</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MC Gerson Jr. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
