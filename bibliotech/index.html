@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bibliotech — Digital Library</title>
+  <meta name="description" content="A modern digital library experience with real catalog search, events, services, and member resources." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html"><i class="fa-solid fa-book-open"></i><span>BIBLIOTECH</span></a>
+
+      <nav class="navlinks">
+        <a href="books.html">Books</a>
+        <a href="collection.html">Digital Collection</a>
+        <a href="events.html">Events</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dica: se você tiver login.html, troque aqui -->
+        <a class="btn btn-primary" href="contact.html"><i class="fa-solid fa-right-to-bracket"></i>Member Login</a>
+        <button class="btn hamburger" id="openMenu" type="button" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="panel" role="dialog" aria-label="Mobile menu">
+      <button class="btn x" id="closeMenu" type="button" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <a href="books.html">Books</a>
+      <a href="collection.html">Digital Collection</a>
+      <a href="events.html">Events</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1 class="title-xl">Your gateway to<br><span class="accent">knowledge</span> and discovery.</h1>
+        <p class="hero-sub">Access millions of books, journals, and digital media from anywhere.</p>
+
+        <div class="search-wrap" role="search" aria-label="Catalog search">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="q" type="search" placeholder="Search the catalog, authors, or ISBN..." />
+          </div>
+          <button class="btn btn-primary" id="explore" type="button">Explore Collection</button>
+        </div>
+
+        <div class="status" id="status">Search the real catalog directly from the homepage.</div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Search Results</h2>
+          <a class="link-arrow" href="books.html">Browse all books <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="results-grid" id="resultGrid" aria-live="polite"></div>
+
+        <div class="pager" id="pager" hidden>
+          <button class="btn" id="prevPage" type="button"><i class="fa-solid fa-arrow-left"></i>Prev</button>
+          <span class="pager-info" id="pagerInfo">Page 1</span>
+          <button class="btn" id="nextPage" type="button">Next<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">New Arrivals</h2>
+          <a class="link-arrow" href="books.html">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="grid-books">
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg" alt="The Midnight Library">
+            </div>
+            <div>
+              <h3 class="book-title">The Midnight Library</h3>
+              <div class="book-author">Matt Haig</div>
+            </div>
+            <a class="btn btn-soft borrow-btn" target="_blank" rel="noopener" href="https://openlibrary.org/works/OL21111316W">Borrow</a>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9780316556347-L.jpg" alt="Circe">
+            </div>
+            <div>
+              <h3 class="book-title">Circe</h3>
+              <div class="book-author">Madeline Miller</div>
+            </div>
+            <a class="btn btn-soft borrow-btn" target="_blank" rel="noopener" href="https://openlibrary.org/works/OL53924W">Borrow</a>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="https://covers.openlibrary.org/b/isbn/9781982168438-L.jpg" alt="Cloud Cuckoo Land">
+            </div>
+            <div>
+              <h3 class="book-title">Cloud Cuckoo Land</h3>
+              <div class="book-author">Anthony Doerr</div>
+            </div>
+            <a class="btn btn-soft borrow-btn" target="_blank" rel="noopener" href="https://openlibrary.org/works/OL27334194W">Borrow</a>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img
+                src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/01/os-sete-maridos-de-evelyn-hugo.jpg?w=1200&h=900&crop=0"
+                alt="The Seven Husbands of Evelyn Hugo"
+              >
+            </div>
+            <div>
+              <h3 class="book-title">The Seven Husbands of Evelyn Hugo</h3>
+              <div class="book-author">Taylor Jenkins Reid</div>
+            </div>
+            <a class="btn btn-soft borrow-btn" target="_blank" rel="noopener" href="https://openlibrary.org/works/OL17307102W">Borrow</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Stay Connected</div>
+            <h2 class="section-title" style="font-size:42px">Upcoming Events</h2>
+          </div>
+          <a class="btn" href="events.html">See Full Calendar</a>
+        </div>
+
+        <div class="events-grid">
+          <article class="event-card">
+            <div class="date-badge">
+              <div class="day">14</div>
+              <div class="month">OCT</div>
+            </div>
+            <div>
+              <h3 class="event-title">Afternoon Book Club</h3>
+              <p class="event-copy">Discussing “Tomorrow, and Tomorrow, and Tomorrow” in the Garden Room.</p>
+              <button class="event-link register-event" data-event="Afternoon Book Club" type="button">
+                Register <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="date-badge">
+              <div class="day">18</div>
+              <div class="month">OCT</div>
+            </div>
+            <div>
+              <h3 class="event-title">Children’s Storytime</h3>
+              <p class="event-copy">Interactive reading and craft session for ages 3 to 7. All parents welcome.</p>
+              <button class="event-link register-event" data-event="Children’s Storytime" type="button">
+                Register <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="date-badge">
+              <div class="day">22</div>
+              <div class="month">OCT</div>
+            </div>
+            <div>
+              <h3 class="event-title">Author Talk: J.L. Rivers</h3>
+              <p class="event-copy">An evening of mystery and discussion with the award-winning thriller writer.</p>
+              <button class="event-link register-event" data-event="Author Talk: J.L. Rivers" type="button">
+                Register <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section help">
+      <div class="container">
+        <h2 class="section-title" style="font-size:44px">How We Can Help</h2>
+        <p class="lead" style="margin-inline:auto">
+          Beyond books, Bibliotech provides modern tools and support to empower your learning journey.
+        </p>
+
+        <div class="help-grid">
+          <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-tablet-screen-button"></i></div>
+            <h3 class="service-title">Digital Rentals</h3>
+            <p class="service-copy">Borrow eBooks, audiobooks, and streaming media directly to your devices via the library app.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-door-open"></i></div>
+            <h3 class="service-title">Study Rooms</h3>
+            <p class="service-copy">Book private rooms for collaborative projects or quiet focus, equipped with screens and Wi-Fi.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h3 class="service-title">Research Help</h3>
+            <p class="service-copy">One-on-one sessions with our librarians to help you navigate academic databases and archives.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html"><i class="fa-solid fa-book-open"></i><span>BIBLIOTECH</span></a>
+        <p>Modernizing the way we access knowledge. Join our community and explore the boundless worlds within pages.</p>
+        <div class="socials">
+          <a href="#" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <a href="contact.html">123 Library Way, Knowledge City</a>
+        <a href="tel:+15551234567">(555) 123-4567</a>
+        <a href="mailto:hello@bibliotech.io">hello@bibliotech.io</a>
+      </div>
+
+      <div>
+        <h4>Hours of Operation</h4>
+        <a href="#">Mon – Fri &nbsp; 8am – 9pm</a>
+        <a href="#">Saturday &nbsp; 10am – 6pm</a>
+        <a href="#">Sunday &nbsp; 12pm – 5pm</a>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="books.html">Renew Books</a>
+        <a href="events.html">Donate</a>
+        <a href="services.html">Volunteering</a>
+        <a href="about.html">Privacy Policy</a>
+      </div>
+    </div>
+
+    <div class="container legal">
+      <span>© <span id="year"></span> Bibliotech Public Library. All rights reserved.</span>
+      <span>Built for the community.</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
